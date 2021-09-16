@@ -21,6 +21,7 @@ define('RECEITA_PLUGUIN_URL', __FILE__);
 include('includes/activate.php');
 include('includes/init.php');
 include('includes/admin/admin_init.php');
+include('includes/filter-content.php');
 
 // Hooks
 register_activation_hook(RECEITA_PLUGUIN_URL, 'rt_activate_pluguin');
