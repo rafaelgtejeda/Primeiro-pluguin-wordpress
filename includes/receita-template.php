@@ -6,4 +6,6 @@
     <li>Tipo da receita: TIPO_PH</li>
 </ul>
 
+<div id="receita_voto" class="entry-content rateit" data-rateit-resetable="false" data-id="RECEITA_ID_PH"></div>
+
 <h3>Modo de Preparo:</h3>

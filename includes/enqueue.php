@@ -1,9 +1,10 @@
 <?php
 function rt_enqueue_scripts() {
-
+    
+    // REGISTRO
     wp_register_style(
         'rt_rateit',
-        plugins_url('/assets/rateit/style.css', RECEITA_PLUGUIN_URL) 
+        plugins_url('/assets/rateit/rateit.css', RECEITA_PLUGUIN_URL) 
     );
 
     wp_register_script(
@@ -22,8 +23,13 @@ function rt_enqueue_scripts() {
         true
     );
 
+    wp_localize_script('rt_script', 'receita_obj', array(
+        'ajax_url' => admin_url('admin-ajax.php')
+    ));
+
+
     // Uso
-    wp_enqueue_style('rt_rateit');
+     wp_enqueue_style('rt_rateit');
     wp_enqueue_script('rt_rateit');
     wp_enqueue_script('rt_script');
 

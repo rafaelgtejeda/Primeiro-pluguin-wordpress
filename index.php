@@ -23,6 +23,7 @@ include('includes/init.php');
 include('includes/admin/admin_init.php');
 include('includes/filter-content.php');
 include('includes/enqueue.php');
+include('includes/voto-receita.php');
 
 // Hooks
 register_activation_hook(RECEITA_PLUGUIN_URL, 'rt_activate_pluguin');
@@ -31,5 +32,7 @@ add_action('admin_init', 'rt_receitas_admin_init');
 add_action('save_post_receita', 'rt_save_post_admin', 10, 3);
 add_filter('the_content', 'rt_filter_receita_content');
 add_action('wp_enqueue_scripts', 'rt_enqueue_scripts', 100);
+add_action('wp_ajax_rt_voto_receita', 'rt_voto_receita');
+add_action('wp_ajax_nopriv_rt_voto_receita', 'rt_voto_receita');
 
 // Shortcodes
