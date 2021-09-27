@@ -10,7 +10,7 @@ function rt_activate_pluguin() {
     $sql = "CREATE TABLE ".$wpdb->prefix."receita_votos(
         ID BIGINT(20) NOT NULL AUTO_INCREMENT, 
         receita_id BIGINT(20) NOT NULL,
-        voto TINYINT(1) NOT NULL,
+        voto FLOAT(5) NOT NULL,
         user_ip VARCHAR(32) NOT NULL,
         PRIMARY KEY (ID)
     ) " .$wpdb->get_charset_collate();

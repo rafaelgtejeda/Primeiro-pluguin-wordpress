@@ -2,10 +2,15 @@
 
 include 'metabox_rt_receita_opcoes.php';
 include 'enqueue.php';
+include 'columns.php';
 
 function rt_receitas_admin_init() {
     add_action('add_meta_boxes_receita', 'rt_receitas_metaboxes');
     add_action('admin_enqueue_scripts', 'rt_admin_enqueue');
+
+    add_filter('manage_receita_posts_columns', 'rt_receita_columns');
+    add_action('manage_receita_posts_custom_columns', 'rt_manage_receita_columns', 10, 2);
+
 }
 
 function rt_receitas_metaboxes() {
